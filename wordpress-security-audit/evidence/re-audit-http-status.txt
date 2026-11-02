@@ -1,0 +1,17 @@
+Assessment date: 2026-11-02
+Target: http://192.168.2.5
+
+GET /                                              HTTP 200
+GET /wp-login.php                                  HTTP 200
+GET /wp-config.php                                 HTTP 403
+GET /wp-content/uploads/                           HTTP 403
+GET /wp-content/themes/twentytwentyfive/           HTTP 403
+GET /xmlrpc.php                                    HTTP 405
+GET /index.php/wp-json/wp/v2/users?per_page=10     HTTP 200
+
+Interpretation:
+- Application and login page remained available.
+- Direct HTTP access to wp-config.php was denied.
+- Directory indexes tested were blocked.
+- GET was not accepted by XML-RPC; this does not establish that all XML-RPC methods are disabled.
+- REST API user endpoint remained publicly accessible.

@@ -1,0 +1,11 @@
+Initial assessment notes (2026-11-02)
+- Nmap: 22/tcp SSH open; 80/tcp HTTP open; 443/tcp closed.
+- Apache 2.4.41, Ubuntu.
+- PHP 7.4.3 observed.
+- WordPress 7.1.4 identified by scanner.
+- Directory indexes visible in uploads and a theme directory.
+- Public author archive and REST API exposed user profile information.
+- readme.html and license.txt returned HTTP 200.
+- wp-content/debug.log and .git/config returned HTTP 404 at tested paths.
+- wp-config.php response did not disclose file contents.
+- PHP upgrade and component updates recommended.
